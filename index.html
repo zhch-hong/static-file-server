@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@0.20.0/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>static file server</h1>
+    <input type="file" name="file" id="file" />
+    <script>
+      const file = document.getElementById('file');
+      file.onchange = function (event) {
+        const files = event.target.files;
+        const file = files[0];
+        const data = new FormData();
+        data.append('file', file);
+        axios.post('/upload', data).then((res) => {
+          const image = new Image();
+          image.src = res.data;
+          image.onload = function () {
+            document.body.append(image);
+          };
+        });
+      };
+    </script>
+  </body>
+</html>
