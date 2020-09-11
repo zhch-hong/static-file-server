@@ -59,7 +59,6 @@ app.all('*', (req, res, next) => {
           if (err) {
             return console.log(err);
           }
-          console.log(req);
           // 删除临时文件
           fs.unlink(filePath, function () {});
           // 返回文件服务器中该文件的url
@@ -138,4 +137,6 @@ app.all('*', (req, res, next) => {
   }
 });
 
-app.listen(port, () => console.log(`static file server in port: ${port}`));
+app.listen(port, () =>
+  console.log(`static file server: http://127.0.0.1:${port}`)
+);
