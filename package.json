@@ -2,22 +2,21 @@
   "name": "static-file-server",
   "version": "1.0.0",
   "description": "图片上传/静态文件服务器",
+  "author": "zhch-hong",
   "main": "index.js",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "static",
     "file",
     "server"
   ],
-  "author": "zhch-hong",
-  "license": "ISC",
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "formidable": "^1.2.2",
-    "uuid": "^8.3.0"
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "formidable": "^2.0.1",
+    "uuid": "^8.3.2"
   }
 }
